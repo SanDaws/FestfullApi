@@ -11,11 +11,11 @@ public class Program
         var builder = WebApplication.CreateBuilder(args);
 
         Env.Load();
-        var FestFullModuleConection = $"server={Environment.GetEnvironmentVariable("HOST")};" +
-                                   $"port={Environment.GetEnvironmentVariable("PORT")};" +
-                                   $"database={Environment.GetEnvironmentVariable("DATABASE")};" +
-                                   $"uid={Environment.GetEnvironmentVariable("USER")};" +
-                                   $"password={Environment.GetEnvironmentVariable("PASSWORD")}";
+        var FestFullModuleConection = $"server={Environment.GetEnvironmentVariable("PGHOST")};" +
+                                   $"port={Environment.GetEnvironmentVariable("PGPORT")};" +
+                                   $"database={Environment.GetEnvironmentVariable("PGDATABASE")};" +
+                                   $"uid={Environment.GetEnvironmentVariable("PGUSER")};" +
+                                   $"password={Environment.GetEnvironmentVariable("PGPASSWORD")}";
         builder.Services.AddDbContext<FestFullApiDbContext>(options =>options.UseNpgsql(FestFullModuleConection));
             
 
