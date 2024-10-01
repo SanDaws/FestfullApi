@@ -11,7 +11,7 @@ public class Guest:Participant
 {   
     [Key]
     [Column("guest_id")]
-    uint GuestId{get;set;}
+    public uint GuestId{get;set;}
     [Column("phone")]
     public required string Phone{get;set;}
     [Column("b_day")]
