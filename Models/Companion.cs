@@ -11,7 +11,10 @@ namespace FestfullApi.Models;
 public class Companion : Participant
 {
     [Key]
-    public uint Companion_id { get; set; }
+    [Column("companion_id")]
+    public uint CompanionId { get; set; }
+    [Column("dog_checker")]
+    public bool DogCkeker{get;set;}
 
 
 }

@@ -8,16 +8,21 @@ using System.Threading.Tasks;
 namespace FestfullApi.Models;
 public abstract class Participant
 {
-    
+    [Column("f_name")]
     public required string FirstName{get;set;}
-    public string secondName{get;set;}
-     public string FirstLastName{get;set;}
-    public string secondLastName{get;set;}
+    [Column("s_name")]
+    public string? SecondName{get;set;}
+    [Column("f_last_name")]
+    public string? FirstLastName{get;set;}
+    [Column("s_last_name")]
+    public string? secondLastName{get;set;}
 
     [EmailAddress]
     [Required(AllowEmptyStrings =true)]
-    public string email{get;set;}
+    [Column("email")]
+    public string? Email{get;set;}
     [Timestamp]
+    [Column("creation_date")]
     protected DateOnly Datestamp=>DateOnly.FromDateTime(DateTime.Now);
 
         
