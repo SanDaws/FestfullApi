@@ -23,7 +23,7 @@ public abstract class Participant
     public string? Email{get;set;}
     [Timestamp]
     [Column("creation_date")]
-    protected DateOnly Datestamp=>DateOnly.FromDateTime(DateTime.Now);
+    protected DateOnly Datestamp{get;set;}
 
         
 

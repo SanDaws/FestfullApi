@@ -15,6 +15,10 @@ public class Companion : Participant
     public uint CompanionId { get; set; }
     [Column("dog_checker")]
     public bool DogCkeker{get;set;}
+    [Column("guest_id")]
+    public uint GuestId{get;set;}
+    [ForeignKey("GuestId")]
+    public Guest guestFK{get;set;}
 
 
 }
