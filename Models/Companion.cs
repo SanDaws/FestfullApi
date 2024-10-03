@@ -16,9 +16,16 @@ public class Companion : Participant
     [Column("dog_checker")]
     public bool DogCkeker{get;set;}
     [Column("guest_id")]
-    public uint GuestId{get;set;}
+    public required uint GuestId{get;set;}
     [ForeignKey("GuestId")]
     public Guest guestFK{get;set;}
+
+    public Companion(string FirstName, string SecondName, string FirstLastName, string SecondLastName, string Email,string DogCkeker,uint GuestId) 
+    : base(FirstName, SecondName, FirstLastName, SecondLastName, Email)
+    {
+        this.DogCkeker=(DogCkeker.ToLower()=="si")?true:false;
+        this.GuestId= GuestId;
+    }
 
 
 }
