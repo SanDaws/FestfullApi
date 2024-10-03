@@ -15,7 +15,7 @@ public abstract class Participant
     [Column("f_last_name")]
     public string? FirstLastName{get;set;}
     [Column("s_last_name")]
-    public string? secondLastName{get;set;}
+    public string? SecondLastName{get;set;}
 
     [EmailAddress]
     [Required(AllowEmptyStrings =true)]
@@ -24,6 +24,15 @@ public abstract class Participant
     [Timestamp]
     [Column("creation_date")]
     protected DateOnly Datestamp{get;set;}
+
+    public Participant(string FirstName,string SecondName,string FirstLastName,string SecondLastName, string Email){
+        this.FirstName=FirstName;
+        this.SecondName=SecondName;
+        this.FirstLastName=FirstLastName;
+        this.SecondLastName=SecondLastName;
+        this.Email=Email;
+        Datestamp= DateOnly.FromDateTime(DateTime.Now);
+    }
 
         
 
