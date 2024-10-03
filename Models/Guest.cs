@@ -8,7 +8,9 @@ using System.Threading.Tasks;
 namespace FestfullApi.Models;
 [Table("guests")]
 public class Guest:Participant
-{   
+{
+    
+
     [Key]
     [Column("guest_id")]
     public uint GuestId{get;set;}
@@ -29,7 +31,15 @@ public class Guest:Participant
     [ForeignKey("EventId")]
     public required Event EventFK {get;set;}
 
-
+    public Guest(string FirstName, string SecondName, string FirstLastName, string SecondLastName, string Email,string Phone,DateOnly BirthDay, string Alcoholchecker,List<string> Alergies, string Password)
+    : base(FirstName, SecondName, FirstLastName, SecondLastName, Email)
+    {
+        this.Phone=Phone;
+        this.BirthDay=BirthDay;
+        this.Alcoholchecker=(Alcoholchecker.ToLower()== "si")?true:false;
+        this.Alergies=Alergies;
+        this.Password=Password;
+    }
     
     
 }
