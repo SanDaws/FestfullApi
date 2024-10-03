@@ -9,5 +9,19 @@ namespace FestfullApi.Dtos.Request
     public class CompanionDto
     {
         
+    public required string FirstName{get;set;}
+    
+    public string? SecondName{get;set;}
+    
+    public string? FirstLastName{get;set;}
+    
+    public string? SecondLastName{get;set;}
+
+    public string? Email{get;set;}
+    
+    public string DogCkeker{get;set;}
+    
+    public required uint GuestId{get;set;}
+        
     }
 }
