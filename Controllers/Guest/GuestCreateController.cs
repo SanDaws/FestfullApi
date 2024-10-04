@@ -10,6 +10,9 @@ namespace FestfullApi.Controllers.Guest
     [Route("api/[controller]")]
     public class GuestCreateController : ControllerBase
     {
+        public async Task<ActionResult> getall(){
+            return Ok();
+        }
         
     }
 }
