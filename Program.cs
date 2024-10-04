@@ -1,5 +1,7 @@
 using DotNetEnv;
 using FestfullApi.data;
+using FestfullApi.Repositories;
+using FestfullApi.services;
 using Microsoft.EntityFrameworkCore;
 
 namespace FestfullApi;
@@ -23,6 +25,7 @@ public class Program
         // Add services to the container.
 
         builder.Services.AddControllers();
+        builder.Services.AddScoped<ICompanionRepository,CompanionServices>();
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
