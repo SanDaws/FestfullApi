@@ -14,9 +14,7 @@ namespace FestfullApi.Controllers.Companion
     public class CompanionCreateController(ICompanionRepository companionRepository) : CompanionConectionController(companionRepository)
     {
         //[Authorize]// for  make it required a jwt
-        [HttpGet]
-        public Task<ActionResult<IEnumerable<Companion>>> getAll(){
-            return Ok("sabreoso");
-        }
+
+        
     }
 }
