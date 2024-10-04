@@ -5,6 +5,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using FestfullApi.Dtos.Request;
 using FestfullApi.Models;
 using Microsoft.IdentityModel.Tokens;
 
@@ -12,7 +13,7 @@ namespace FestfullApi.config
 {
     public class JWT
     {
-        public string GenerateJwtToken(Guest user)
+        public static string GenerateJwtToken(Guest user)
     {
         var claims = new[]
         {
