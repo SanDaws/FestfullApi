@@ -45,7 +45,7 @@ public class Program
                 ValidAudience = Environment.GetEnvironmentVariable("JWTAUDIENCE"),
                 ValidateLifetime = true,
                 ClockSkew = TimeSpan.Zero,
-                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Environment.GetEnvironmentVariable("JWT_KEY")!))
+                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Environment.GetEnvironmentVariable("JWTKEY")!))
             };
         });
 
