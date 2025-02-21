@@ -31,12 +31,12 @@ public class Guest:Participant
     [ForeignKey("EventId")]
     public required Event EventFK {get;set;}
 
-    public Guest(string FirstName, string SecondName, string FirstLastName, string SecondLastName, string Email,string Phone,DateOnly BirthDay, string Alcoholchecker,List<string> Alergies, string Password)
+    public Guest(string FirstName, string SecondName, string FirstLastName, string SecondLastName, string Email,string Phone,DateOnly BirthDay, bool Alcoholchecker,List<string> Alergies, string Password)
     : base(FirstName, SecondName, FirstLastName, SecondLastName, Email)
     {
         this.Phone=Phone;
         this.BirthDay=BirthDay;
-        this.Alcoholchecker=(Alcoholchecker.ToLower()== "si")?true:false;
+        this.Alcoholchecker=Alcoholchecker;
         this.Alergies=Alergies;
         this.Password=Password;
     }

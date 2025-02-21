@@ -20,10 +20,10 @@ public class Companion : Participant
     [ForeignKey("GuestId")]
     public Guest guestFK{get;set;}
 
-    public Companion(string FirstName, string SecondName, string FirstLastName, string SecondLastName, string Email,string DogCkeker,uint GuestId) 
+    public Companion(string FirstName, string SecondName, string FirstLastName, string SecondLastName, string Email,bool DogCkeker,uint GuestId) 
     : base(FirstName, SecondName, FirstLastName, SecondLastName, Email)
     {
-        this.DogCkeker=(DogCkeker.ToLower()=="si")?true:false;
+        this.DogCkeker=DogCkeker;
         this.GuestId= GuestId;
     }
 
